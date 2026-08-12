@@ -39,9 +39,9 @@ img { display: block; width: 100%; }
   color: white;
 }
 .hero-inner { padding: 80px 20px; }
-.eyebrow { letter-spacing: .25em; text-transform: uppercase; font-size: .75rem; }
+.eyebrow { letter-spacing: .25em; text-transform: uppercase; font-size: 1.5rem; }
 .names { font: 500 clamp(3.5rem, 11vw, 8rem)/.8 var(--serif); margin: 25px 0; }
-.date { letter-spacing: .18em; font-size: .9rem; }
+.date { letter-spacing: .18em; font-size: 2rem; }
 .scroll { position: absolute; bottom: 25px; font-size: .7rem; letter-spacing: .18em; }
 
 nav {
