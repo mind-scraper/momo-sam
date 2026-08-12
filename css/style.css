@@ -35,7 +35,7 @@ img { display: block; width: 100%; }
   overflow: hidden;
   background:
     linear-gradient(rgba(25,25,22,.22), rgba(25,25,22,.30)),
-    url("../assets/hero-placeholder.svg") center/cover;
+    url("../assets/hero-placeholder.JPG") center/cover;
   color: white;
 }
 .hero-inner { padding: 80px 20px; }
