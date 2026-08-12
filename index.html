@@ -1,68 +1,130 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Momo & Sam — Pernikahan">
-  <title>Momo & Sam — Pernikahan</title>
-  <link rel="stylesheet" href="css/style.css?v=5">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Momo & Sam — Pernikahan">
+<title>Momo & Sam — Pernikahan</title>
+<link rel="stylesheet" href="css/style.css?v=2">
 </head>
-
 <body>
-
-  <!-- Audio Element (used to unlock audio on user gesture) -->
-  <audio id="bg-music" loop preload="auto">
-    <source src="assets/reze.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- OPENING SCREEN -->
-  <div id="opening-screen">
-    <div class="opening-content">
-      <div class="opening-names">Momo &amp; Sam</div>
-      <div class="opening-date">24 · 04 · 2027</div>
-      <div class="opening-divider">✦</div>
-      <div class="opening-buttons">
-        <a href="id/index.html" class="language-button" data-lang="id">Buka</a>
-        <a href="ja/index.html" class="language-button" data-lang="ja">招待状を開く</a>
-        <a href="en/index.html" class="language-button" data-lang="en">Open</a>
-      </div>
-    </div>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Kami akan segera menikah</div>
+    <div class="names">Momo &amp; Sam </div>
+    <div class="date">24 · 04 · 2027</div>
   </div>
+  <div class="scroll">SCROLL</div>
+</header>
 
-  <script>
-    document.querySelectorAll('.language-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetUrl = this.getAttribute('href');
-        const audio = document.getElementById('bg-music');
+<nav>
+  <div class="container nav-inner">
+    <div class="nav-links"><a href="#ceremony">Acara</a><a href="#rsvp">RSVP</a></div>
+    <div class="lang"><a class="active" href="./index.html">ID</a><a href="./ja/index.html">日本語</a><a href="./en/index.html">EN</a></div>
+  </div>
+</nav>
 
-        // Remember that the user wants music
-        sessionStorage.setItem('playMusic', 'true');
+<main>
+<section>
+<div class="container">
+<div class="section-title"><div class="small">Undangan Pernikahan</div><h2>Dengan penuh sukacita</h2></div>
+<div class="intro">Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan berbagi kebahagiaan bersama kami pada hari pernikahan kami.</div>
+<div class="ornament">— ✦ —</div>
+<div class="countdown">
+<div class="countdown-item"><span id="days" class="countdown-number">0</span><span class="countdown-label">Hari</span></div>
+<div class="countdown-item"><span id="hours" class="countdown-number">0</span><span class="countdown-label">Jam</span></div>
+<div class="countdown-item"><span id="minutes" class="countdown-number">0</span><span class="countdown-label">Menit</span></div>
+<div class="countdown-item"><span id="seconds" class="countdown-number">0</span><span class="countdown-label">Detik</span></div>
+</div>
+</div>
+</section>
 
-        // Try to start playback (this also "unlocks" audio for the origin
-        // so the next page has a better chance of autoplaying)
-        const playPromise = audio.play();
+<section id="couple">
+    <div class="container">
+        <div class="section-title">
+            <div class="small">The Couple</div>
+            <h2>Momo &amp; Sam</h2>
+        </div>
 
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              // Give the browser a brief moment to actually start the audio
-              // before navigating away
-              setTimeout(() => {
-                window.location.href = targetUrl;
-              }, 150);
-            })
-            .catch(() => {
-              // Autoplay was blocked – still navigate
-              window.location.href = targetUrl;
-            });
-        } else {
-          window.location.href = targetUrl;
-        }
-      });
-    });
-  </script>
+        <div class="couple-grid">
 
+            <div class="person">
+                <h3>Momoko Kuroda</h3>
+                <p class="role">Putri dari</p>
+                <p>
+                    Kousei Kuroda<br>
+                    Kyoko Kuroda
+                </p>
+            </div>
+
+            <div class="person">
+                <h3>Samuel Eka Putra Payong Masan</h3>
+                <p class="role">Putra dari</p>
+                <p>
+                    Silvilus Boro Ola<br>
+                    Lusia Lou Sule
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="ceremony">
+<div class="container">
+<div class="section-title"><div class="small">Hari Pernikahan</div><h2>Acara</h2></div>
+<div class="info-grid">
+<div class="card"><div class="time">11:00</div><h3>Upacara Pernikahan</h3><p>Mino Catholic Church<br>[Address]</p><a class="button" href="#" target="_blank">Lihat Peta</a></div>
+<div class="card"><div class="time">13:00</div><h3>Resepsi</h3><p>[Reception Venue]<br>[Address]</p><a class="button" href="#" target="_blank">Lihat Peta</a></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title"><div class="small">Rangkaian Acara</div><h2>Jadwal</h2></div>
+<div class="timeline">
+<div class="event"><div class="event-time">11:00</div><div><h3>Upacara</h3><p>Pemberkatan pernikahan.</p></div></div>
+<div class="event"><div class="event-time">12:00</div><div><h3>Foto Bersama</h3><p>Sesi foto bersama keluarga dan teman.</p></div></div>
+<div class="event"><div class="event-time">13:00</div><div><h3>Resepsi</h3><p>Makan siang dan perayaan bersama.</p></div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container story">
+<div class="story-image"></div>
+<div class="story-text"><div class="section-title" style="text-align:left;margin-bottom:25px"><div class="small">Kisah Kami</div><h2>Our Story</h2></div><p>Tulis kisah singkat tentang bagaimana kalian bertemu dan perjalanan kalian hingga hari ini.</p><p>Bagian ini dapat diganti dengan cerita pribadi, beberapa tanggal penting, atau pesan untuk para tamu.</p></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title"><div class="small">Kenangan</div><h2>Galeri</h2></div>
+<div class="gallery">
+<img src="assets/photo-placeholder.svg" alt="Foto">
+<img src="assets/photo-placeholder.svg" alt="Foto">
+<img src="assets/photo-placeholder.svg" alt="Foto">
+<img src="assets/photo-placeholder.svg" alt="Foto">
+<img src="assets/photo-placeholder.svg" alt="Foto">
+<img src="assets/photo-placeholder.svg" alt="Foto">
+</div>
+</div>
+</section>
+
+<section class="rsvp" id="rsvp">
+<div class="container rsvp-box">
+<div class="section-title"><div class="small">RSVP</div><h2>Kehadiran Anda</h2></div>
+<p>Mohon konfirmasi kehadiran Anda melalui formulir berikut.</p>
+<a class="button" href="#" target="_blank">Konfirmasi Kehadiran</a>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-names">Momo &amp; Sam</div>
+  <p>24 · 04 · 2027</p>
+</footer>
+<script src="js/script.js"></script>
 </body>
 </html>
