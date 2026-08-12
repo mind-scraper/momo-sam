@@ -198,12 +198,13 @@
           data-id="Upacara Pernikahan"
           data-ja="結婚式"></h3>
 
-        <p>
-          Mino Catholic Church<br>
-          [Address]
-        </p>
+      <p
+        data-en="Mino Catholic Church<br>1 Chome-7-22 Boshima, Minoh, Osaka 562-0013"
+        data-id="Gereja Katolik Mino<br>1 Chome-7-22 Boshima, Minoh, Osaka 562-0013"
+        data-ja="カトリック 箕面教会<br>1 Chome-7-22 Boshima, Minoh, Osaka 562-0013"
+      ></p>
 
-        <a class="button" href="#" target="_blank"
+        <a class="button" href="https://maps.app.goo.gl/bDb4RW2ueRLUT4ACA" target="_blank"
            data-en="View Map"
            data-id="Lihat Peta"
            data-ja="地図を見る"></a>
@@ -380,7 +381,7 @@ function setLanguage(language) {
     const text = element.dataset[language];
 
     if (text !== undefined) {
-      element.textContent = text;
+      element.innerHTML = text;
     }
   });
 
