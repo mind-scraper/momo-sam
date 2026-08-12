@@ -1,13 +1,12 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Momo & Sam — Wedding">
 <title>Momo & Sam — Wedding</title>
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
-
 
 <body>
 
@@ -17,39 +16,15 @@
 
 <div id="opening-screen">
   <div class="opening-content">
-
-    <!-- =========================    
-    <div class="opening-date">
-      24 · 04 · 2027
-    </div>
-
-    <div class="opening-names">
-      Momo &amp; Sam
-    </div>
-     
-
-    <div class="opening-message">
-      Dengan penuh sukacita, kami mengundang Anda
-      untuk merayakan pernikahan kami.
-    </div>
-    ========================= -->
-
-    <button id="open-invitation">
-      BUKA / 開ける / OPEN
-    </button>
-
+    <button class="opening-language-button" data-opening-lang="id">BUKA</button>
+    <button class="opening-language-button" data-opening-lang="ja">開ける</button>
+    <button class="opening-language-button" data-opening-lang="en">OPEN</button>
   </div>
 </div>
-
-
-<!-- =========================
-     WEDDING MUSIC
-     ========================= -->
 
 <audio id="wedding-music" loop>
   <source src="assets/reze.mp3" type="audio/mpeg">
 </audio>
-
 
 <!-- =========================
      MAIN INVITATION
@@ -57,86 +32,110 @@
 
 <div id="main-content">
 
-
 <header class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">We are getting married!</div>
-    <div class="names">Momo &amp; Sam </div>
+    <div class="eyebrow"
+         data-en="We are getting married!"
+         data-id="Kami akan menikah!"
+         data-ja="私たちは結婚します！"></div>
+
+    <div class="names">Momo &amp; Sam</div>
     <div class="date">24 · 04 · 2027</div>
   </div>
-  <div class="scroll">SCROLL</div>
+  <div class="scroll"
+       data-en="SCROLL"
+       data-id="GULIR"
+       data-ja="スクロール"></div>
 </header>
 
-<!-- =========================
 <nav>
   <div class="container nav-inner">
     <div class="nav-links">
-      
-      <a href="#ceremony">Acara</a>
-      
-      <a href="#rsvp">RSVP</a>
-      
+      <a href="#ceremony"
+         data-en="Details"
+         data-id="Acara"
+         data-ja="詳細"></a>
     </div>
 
     <div class="lang">
-      <a class="active" href="./index.html">ID</a>
-      <a href="./ja/index.html">日本語</a>
-      <a href="./en/index.html">EN</a>
+      <button class="language-button active" data-lang="en">EN</button>
+      <button class="language-button" data-lang="id">ID</button>
+      <button class="language-button" data-lang="ja">日本語</button>
     </div>
-    
   </div>
 </nav>
-========================= -->
 
 <main>
 
 <section>
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
-  <div class="small">Wedding Invitation</div>
-  <h2>With great joy</h2>
-</div>
+    <div class="section-title">
+      <div class="small"
+           data-en="Wedding Invitation"
+           data-id="Undangan Pernikahan"
+           data-ja="結婚式のご案内"></div>
 
-<div class="intro">
-  We warmly invite you to join us and celebrate our wedding day with us.
-</div>
+      <h2
+        data-en="With great joy"
+        data-id="Dengan penuh sukacita"
+        data-ja="喜びを込めて"></h2>
+    </div>
 
-<div class="ornament">— ✦ —</div>
+    <div class="intro"
+         data-en="We warmly invite you to join us and celebrate our wedding day with us."
+         data-id="Dengan hangat kami mengundang Anda untuk hadir dan merayakan hari pernikahan kami bersama."
+         data-ja="私たちの結婚式の日を、ぜひ一緒にお祝いしていただければ嬉しく思います。"></div>
 
-<div class="countdown">
+    <div class="ornament">— ✦ —</div>
 
-  <div class="countdown-item">
-    <span id="days" class="countdown-number">0</span>
-    <span class="countdown-label">Hari</span>
+    <div class="countdown">
+
+      <div class="countdown-item">
+        <span id="days" class="countdown-number">0</span>
+        <span class="countdown-label"
+              data-en="Days"
+              data-id="Hari"
+              data-ja="日"></span>
+      </div>
+
+      <div class="countdown-item">
+        <span id="hours" class="countdown-number">0</span>
+        <span class="countdown-label"
+              data-en="Hours"
+              data-id="Jam"
+              data-ja="時間"></span>
+      </div>
+
+      <div class="countdown-item">
+        <span id="minutes" class="countdown-number">0</span>
+        <span class="countdown-label"
+              data-en="Minutes"
+              data-id="Menit"
+              data-ja="分"></span>
+      </div>
+
+      <div class="countdown-item">
+        <span id="seconds" class="countdown-number">0</span>
+        <span class="countdown-label"
+              data-en="Seconds"
+              data-id="Detik"
+              data-ja="秒"></span>
+      </div>
+
+    </div>
   </div>
-
-  <div class="countdown-item">
-    <span id="hours" class="countdown-number">0</span>
-    <span class="countdown-label">Jam</span>
-  </div>
-
-  <div class="countdown-item">
-    <span id="minutes" class="countdown-number">0</span>
-    <span class="countdown-label">Menit</span>
-  </div>
-
-  <div class="countdown-item">
-    <span id="seconds" class="countdown-number">0</span>
-    <span class="countdown-label">Detik</span>
-  </div>
-
-</div>
-
-</div>
 </section>
-
 
 <section id="couple">
   <div class="container">
 
     <div class="section-title">
-      <div class="small">The Couple</div>
+      <div class="small"
+           data-en="The Couple"
+           data-id="Mempelai"
+           data-ja="新郎新婦"></div>
+
       <h2>Momo &amp; Sam</h2>
     </div>
 
@@ -145,7 +144,10 @@
       <div class="person">
         <h3>Momoko Kuroda</h3>
 
-        <p class="role">Daughter of</p>
+        <p class="role"
+           data-en="Daughter of"
+           data-id="Putri dari"
+           data-ja="娘"></p>
 
         <p>
           Kousei Kuroda<br>
@@ -153,11 +155,13 @@
         </p>
       </div>
 
-
       <div class="person">
         <h3>Samuel Eka Putra Payong Masan</h3>
 
-        <p class="role">Son of</p>
+        <p class="role"
+           data-en="Son of"
+           data-id="Putra dari"
+           data-ja="息子"></p>
 
         <p>
           Silvilus Boro Ola<br>
@@ -166,17 +170,22 @@
       </div>
 
     </div>
-
   </div>
 </section>
-
 
 <section id="ceremony">
   <div class="container">
 
     <div class="section-title">
-      <div class="small">The Wedding Day</div>
-      <h2>Details</h2>
+      <div class="small"
+           data-en="The Wedding Day"
+           data-id="Hari Pernikahan"
+           data-ja="結婚式当日"></div>
+
+      <h2
+        data-en="Details"
+        data-id="Acara"
+        data-ja="詳細"></h2>
     </div>
 
     <div class="info-grid">
@@ -184,84 +193,110 @@
       <div class="card">
         <div class="time">11:00</div>
 
-        <h3>Wedding Ceremony</h3>
+        <h3
+          data-en="Wedding Ceremony"
+          data-id="Upacara Pernikahan"
+          data-ja="結婚式"></h3>
 
         <p>
           Mino Catholic Church<br>
           [Address]
         </p>
 
-        <a class="button" href="#" target="_blank">
-          Lihat Peta
-        </a>
+        <a class="button" href="#" target="_blank"
+           data-en="View Map"
+           data-id="Lihat Peta"
+           data-ja="地図を見る"></a>
       </div>
-
 
       <div class="card">
         <div class="time">13:00</div>
 
-        <h3>Reception</h3>
+        <h3
+          data-en="Reception"
+          data-id="Resepsi"
+          data-ja="披露宴"></h3>
 
         <p>
           [Reception Venue]<br>
           [Address]
         </p>
 
-        <a class="button" href="#" target="_blank">
-          Lihat Peta
-        </a>
+        <a class="button" href="#" target="_blank"
+           data-en="View Map"
+           data-id="Lihat Peta"
+           data-ja="地図を見る"></a>
       </div>
 
     </div>
-
   </div>
 </section>
-
 
 <section>
   <div class="container">
 
     <div class="section-title">
-      <div class="small">Schedule</div>
-      <h2>Schedule</h2>
+      <div class="small"
+           data-en="Schedule"
+           data-id="Jadwal"
+           data-ja="スケジュール"></div>
+
+      <h2
+        data-en="Schedule"
+        data-id="Jadwal"
+        data-ja="予定"></h2>
     </div>
 
     <div class="timeline">
 
       <div class="event">
         <div class="event-time">11:00</div>
-
         <div>
-          <h3>Ceremony</h3>
-          <p>Our wedding ceremony.</p>
+          <h3
+            data-en="Ceremony"
+            data-id="Upacara"
+            data-ja="挙式"></h3>
+
+          <p
+            data-en="Our wedding ceremony."
+            data-id="Upacara pernikahan kami."
+            data-ja="私たちの結婚式です。"></p>
         </div>
       </div>
-
 
       <div class="event">
         <div class="event-time">12:00</div>
-
         <div>
-          <h3>Photos session</h3>
-          <p>Photos with family and friends.</p>
+          <h3
+            data-en="Photo Session"
+            data-id="Sesi Foto"
+            data-ja="写真撮影"></h3>
+
+          <p
+            data-en="Photos with family and friends."
+            data-id="Foto bersama keluarga dan teman-teman."
+            data-ja="ご家族やご友人との写真撮影です。"></p>
         </div>
       </div>
 
-
       <div class="event">
         <div class="event-time">13:00</div>
-
         <div>
-          <h3>Reception</h3>
-          <p>Lunch and celebration together.</p>
+          <h3
+            data-en="Reception"
+            data-id="Resepsi"
+            data-ja="披露宴"></h3>
+
+          <p
+            data-en="Lunch and celebration together."
+            data-id="Makan siang dan perayaan bersama."
+            data-ja="昼食を楽しみながら、一緒にお祝いしましょう。"></p>
         </div>
       </div>
 
     </div>
-
   </div>
 </section>
-
 
 <section>
   <div class="container story">
@@ -270,90 +305,119 @@
 
     <div class="story-text">
 
-      <div
-        class="section-title"
-        style="text-align:left;margin-bottom:25px"
-      >
-        <div class="small">Kisah Kami</div>
-        <h2>Our Story</h2>
+      <div class="section-title" style="text-align:left;margin-bottom:25px">
+        <div class="small"
+             data-en="Our Story"
+             data-id="Kisah Kami"
+             data-ja="私たちの物語"></div>
+
+        <h2
+          data-en="Our Story"
+          data-id="Kisah Kami"
+          data-ja="私たちの物語"></h2>
       </div>
 
-      <p>
-        Tell the story of how you met and the journey that brought you to this day.
-      </p>
+      <p
+        data-en="Tell the story of how you met and the journey that brought you to this day."
+        data-id="Ceritakan kisah bagaimana kalian bertemu dan perjalanan yang membawa kalian sampai pada hari ini."
+        data-ja="二人がどのように出会い、この日まで歩んできたのか、その物語を綴ります。"></p>
 
-      <p>
-        Replace this section with your story, important dates, or a personal message to your guests.
-      </p>
+      <p
+        data-en="Replace this section with your story, important dates, or a personal message to your guests."
+        data-id="Gantilah bagian ini dengan kisah kalian, tanggal-tanggal penting, atau pesan pribadi untuk para tamu."
+        data-ja="この部分を二人の物語、大切な日付、またはゲストへのメッセージに置き換えてください。"></p>
 
     </div>
-
   </div>
 </section>
-
 
 <section>
   <div class="container">
 
     <div class="section-title">
-      <div class="small">Kenangan</div>
-      <h2>Galeri</h2>
+      <div class="small"
+           data-en="Memories"
+           data-id="Kenangan"
+           data-ja="思い出"></div>
+
+      <h2
+        data-en="Gallery"
+        data-id="Galeri"
+        data-ja="ギャラリー"></h2>
     </div>
 
     <div class="gallery">
-
       <img src="assets/photo-placeholder.svg" alt="Foto">
       <img src="assets/photo-placeholder.svg" alt="Foto">
       <img src="assets/photo-placeholder.svg" alt="Foto">
       <img src="assets/photo-placeholder.svg" alt="Foto">
       <img src="assets/photo-placeholder.svg" alt="Foto">
       <img src="assets/photo-placeholder.svg" alt="Foto">
-
     </div>
 
   </div>
 </section>
 
-
 </main>
 
-
 <footer>
-
-  <div class="footer-names">
-    Momo &amp; Sam
-  </div>
-
-  <p>
-    24 · 04 · 2027
-  </p>
-
+  <div class="footer-names">Momo &amp; Sam</div>
+  <p>24 · 04 · 2027</p>
 </footer>
 
-
 </div>
-
-
-<!-- =========================
-     JAVASCRIPT
-     ========================= -->
 
 <script src="js/script.js"></script>
 
 <script>
-
 const openingScreen = document.getElementById("opening-screen");
-const openButton = document.getElementById("open-invitation");
+const openingButtons = document.querySelectorAll(".opening-language-button");
+const languageButtons = document.querySelectorAll(".language-button");
 const weddingMusic = document.getElementById("wedding-music");
 
-openButton.addEventListener("click", () => {
+function setLanguage(language) {
+  document.querySelectorAll("[data-en][data-id][data-ja]").forEach(element => {
+    const text = element.dataset[language];
 
-  weddingMusic.play();
+    if (text !== undefined) {
+      element.textContent = text;
+    }
+  });
 
-  openingScreen.classList.add("hidden");
+  languageButtons.forEach(button => {
+    button.classList.toggle("active", button.dataset.lang === language);
+  });
 
+  document.documentElement.lang =
+    language === "id" ? "id" :
+    language === "ja" ? "ja" : "en";
+
+  localStorage.setItem("weddingLanguage", language);
+}
+
+openingButtons.forEach(button => {
+  button.addEventListener("click", async () => {
+    const language = button.dataset.openingLang;
+
+    setLanguage(language);
+    openingScreen.classList.add("hidden");
+
+    try {
+      await weddingMusic.play();
+    } catch (error) {
+      // Browser may block autoplay. The invitation still opens normally.
+    }
+  });
 });
 
+languageButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.lang);
+  });
+});
+
+// Start with English until the visitor selects a language.
+setLanguage("en");
 </script>
 
 </body>
