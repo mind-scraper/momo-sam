@@ -146,3 +146,91 @@ footer { padding:60px 0; text-align:center; border-top:1px solid var(--line); }
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   OPENING INVITATION
+   ========================= */
+
+#opening-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        linear-gradient(
+            rgba(25, 25, 22, 0.25),
+            rgba(25, 25, 22, 0.35)
+        ),
+        url("../assets/hero.jpg") center/cover;
+
+    color: white;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+#opening-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+.opening-content {
+    width: min(700px, calc(100% - 40px));
+    text-align: center;
+}
+
+
+.opening-date {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 30px;
+}
+
+
+.opening-names {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 11vw, 7rem);
+    line-height: 0.9;
+    margin-bottom: 35px;
+}
+
+
+.opening-message {
+    max-width: 500px;
+    margin: 0 auto 40px;
+
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+
+#open-invitation {
+    padding: 13px 30px;
+
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+#open-invitation:hover {
+    background: white;
+    color: var(--ink);
+}
