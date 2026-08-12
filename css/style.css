@@ -146,3 +146,131 @@ footer { padding:60px 0; text-align:center; border-top:1px solid var(--line); }
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   OPENING SCREEN
+   ========================= */
+
+#opening-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding-bottom: 12vh;
+
+    background-image: url("../assets/hero-placeholder.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.opening-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    width: min(280px, calc(100% - 40px));
+}
+
+
+.language-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 14px 30px;
+
+    border: 1px solid white;
+    background: rgba(25, 25, 22, 0.25);
+    color: white;
+
+    text-decoration: none;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+
+    backdrop-filter: blur(4px);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.language-button:hover {
+    background: white;
+    color: var(--ink);
+}
+
+/* =========================
+   MUSIC TOGGLE BUTTON
+   ========================= */
+
+.music-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(247, 244, 238, 0.92);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.music-toggle:hover {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+
+.music-toggle.is-playing {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.music-toggle.is-playing:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.music-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.music-label {
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .music-toggle {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 12px;
+  }
+  .music-label {
+    display: none;
+  }
+}
