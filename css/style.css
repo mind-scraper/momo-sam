@@ -35,7 +35,7 @@ img { display: block; width: 100%; }
   overflow: hidden;
   background:
     linear-gradient(rgba(25,25,22,.22), rgba(25,25,22,.30)),
-    url("../assets/hero-placeholder.JPG") center/cover;
+    url("../assets/hero-placeholder.png") center/cover;
   color: white;
 }
 .hero-inner { padding: 80px 20px; }
@@ -107,4 +107,42 @@ footer { padding:60px 0; text-align:center; border-top:1px solid var(--line); }
   .countdown-number { font-size:2rem; }
   section { padding:75px 0; }
   .card { padding:30px 20px; }
+}
+
+.couple-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.person {
+    text-align: center;
+    padding: 45px 30px;
+    background: var(--white);
+    border: 1px solid var(--line);
+}
+
+.person h3 {
+    font: 500 2.2rem var(--serif);
+    margin: 0 0 20px;
+}
+
+.person .role {
+    color: var(--accent);
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.person p {
+    margin-top: 5px;
+}
+
+@media (max-width: 720px) {
+    .couple-grid {
+        grid-template-columns: 1fr;
+    }
 }
