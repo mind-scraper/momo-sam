@@ -38,58 +38,89 @@ if (document.getElementById("days")) {
   const audio = document.getElementById("bg-music");
   const toggleBtn = document.getElementById("music-toggle");
 
-  if (!audio) return;
+  if (!audio || !toggleBtn) return;
+
+  // Create a temporary hint message (used when autoplay is blocked)
+  const hint = document.createElement("div");
+  hint.className = "music-hint";
+  hint.setAttribute("aria-live", "polite");
+  hint.innerHTML = '<span class="music-hint-icon">♪</span><span class="music-hint-text">Tap to play music</span>';
+  document.body.appendChild(hint);
+
+  function showHint() {
+    hint.classList.add("is-visible");
+    // Auto-hide after a few seconds
+    setTimeout(() => {
+      hint.classList.remove("is-visible");
+    }, 4500);
+  }
+
+  function hideHint() {
+    hint.classList.remove("is-visible");
+  }
 
   // Helper to update button appearance
   function updateToggleUI(isPlaying) {
-    if (!toggleBtn) return;
     toggleBtn.setAttribute("aria-pressed", isPlaying ? "true" : "false");
     toggleBtn.innerHTML = isPlaying
       ? '<span class="music-icon">♪</span><span class="music-label">Music On</span>'
       : '<span class="music-icon">♪</span><span class="music-label">Music Off</span>';
     toggleBtn.classList.toggle("is-playing", isPlaying);
+
+    // Remove attention-seeking pulse once music is playing
+    if (isPlaying) {
+      toggleBtn.classList.remove("needs-attention");
+      hideHint();
+    }
+  }
+
+  function markNeedsAttention() {
+    toggleBtn.classList.add("needs-attention");
+    showHint();
   }
 
   // Try to resume if the user previously chose to play music
   const shouldPlay = sessionStorage.getItem("playMusic") === "true";
 
   if (shouldPlay) {
-    // Attempt autoplay. This often succeeds because the user already
-    // interacted on the opening page (same origin + recent gesture).
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise
-        .then(() => updateToggleUI(true))
+        .then(() => {
+          updateToggleUI(true);
+        })
         .catch(() => {
-          // Autoplay blocked – wait for the user to tap the music button
+          // Autoplay blocked (common on mobile)
           updateToggleUI(false);
+          markNeedsAttention();
         });
+    } else {
+      updateToggleUI(false);
+      markNeedsAttention();
     }
   } else {
     updateToggleUI(false);
   }
 
   // Toggle button handler
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play()
-          .then(() => {
-            sessionStorage.setItem("playMusic", "true");
-            updateToggleUI(true);
-          })
-          .catch(err => {
-            console.warn("Could not play audio:", err);
-          });
-      } else {
-        audio.pause();
-        sessionStorage.setItem("playMusic", "false");
-        updateToggleUI(false);
-      }
-    });
-  }
+  toggleBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play()
+        .then(() => {
+          sessionStorage.setItem("playMusic", "true");
+          updateToggleUI(true);
+        })
+        .catch(err => {
+          console.warn("Could not play audio:", err);
+        });
+    } else {
+      audio.pause();
+      sessionStorage.setItem("playMusic", "false");
+      updateToggleUI(false);
+    }
+  });
 
-  // Keep UI in sync if the audio ends or is paused externally
+  // Keep UI in sync if the audio is paused/played externally
   audio.addEventListener("play", () => updateToggleUI(true));
   audio.addEventListener("pause", () => updateToggleUI(false));
 })();
