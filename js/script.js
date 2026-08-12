@@ -1,7 +1,7 @@
 
 // Change this date to your wedding date.
 // Format: YYYY-MM-DDTHH:MM:SS+09:00
-const weddingDate = "2026-11-08T10:00:00+09:00";
+const weddingDate = "2027-04-24T11:00:00+09:00";
 
 function updateCountdown() {
   const target = new Date(weddingDate).getTime();
