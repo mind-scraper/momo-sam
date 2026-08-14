@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Tangerine:wght@400;700&display=swap');
 
 :root {
   --paper: #f7f4ee;
@@ -9,6 +9,7 @@
   --white: #fffdf9;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Noto Sans JP", system-ui, sans-serif;
+  --script: "Tangerine", cursive;
 }
 
 * {
@@ -56,7 +57,7 @@ button {
   overflow: hidden;
   background:
     linear-gradient(rgba(25,25,22,.22), rgba(25,25,22,.30)),
-    url("../assets/hero-placeholder.png") center/cover;
+    url("../assets/top.png") center/cover;
   color: white;
 }
 
@@ -65,9 +66,10 @@ button {
 }
 
 .eyebrow {
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  font-size: 1.5rem;
+  letter-spacing: .25em;  
+  font-size: 2rem;
+  font-family: var(--script);
+  /*text-transform: uppercase; */
 }
 
 .names {
@@ -241,7 +243,7 @@ section {
 
 .story-image {
   aspect-ratio: 4/5;
-  background: #e7e2d8 url("../assets/story-placeholder.svg") center/cover;
+  background: #e7e2d8 url("../assets/story.png") center/cover;
 }
 
 .story-text h3 {
@@ -451,4 +453,19 @@ footer {
   .date {
     font-size: 1.4rem;
   }
+}
+
+
+.person-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
