@@ -57,7 +57,7 @@ button {
   overflow: hidden;
   background:
     linear-gradient(rgba(25,25,22,.22), rgba(25,25,22,.30)),
-    url("../assets/top.png") center/cover;
+    url("../assets/top.png") left center/cover;
   color: white;
 }
 
