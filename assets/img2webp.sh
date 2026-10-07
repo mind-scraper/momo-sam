@@ -1,1 +1,1 @@
-cwebp -q 82 IMG_0201.JPG -o IMG_0201.webp
+cwebp -q 82 IMG_0068.JPG -o momo_profile.webp
