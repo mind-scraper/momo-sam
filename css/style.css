@@ -61,6 +61,12 @@ button {
   color: white;
 }
 
+@media (orientation: portrait) {
+  .hero {
+    background-position: 74% center;
+  }
+}
+
 .hero-inner {
   padding: 80px 20px;
 }
