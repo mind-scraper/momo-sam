@@ -1,1 +1,1 @@
-cwebp -q 82 Picture1.png -o sam_profile.webp
+cwebp -q 82 sam_profile_noglasses.png -o sam_profile_noglasses.webp
