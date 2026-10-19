@@ -267,6 +267,12 @@ section {
   aspect-ratio: 1;
   object-fit: cover;
   background: #e7e2d8;
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.gallery img:active {
+  transform: scale(1.5);
 }
 
 .countdown {
