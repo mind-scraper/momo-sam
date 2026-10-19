@@ -411,6 +411,130 @@
   </div>
 </section>
 
+<section class="rsvp">
+  <div class="rsvp-container">
+    <h2
+      data-en="RSVP"
+      data-id="RSVP"
+      data-ja="出欠のお返事">
+      RSVP
+    </h2>
+
+    <p class="rsvp-description"
+       data-en="Please let us know whether you can attend our wedding."
+       data-id="Mohon konfirmasi apakah Anda dapat menghadiri pernikahan kami."
+       data-ja="結婚式へのご出席についてお知らせください。">
+      Please let us know whether you can attend our wedding.
+    </p>
+
+    <form id="rsvp-form">
+      <label for="rsvp-name"
+        data-en="Your Name"
+        data-id="Nama Anda"
+        data-ja="お名前">
+        Your Name
+      </label>
+
+      <input type="text" id="rsvp-name" name="name"
+        placeholder="Full name" required>
+
+      <fieldset>
+        <legend
+          data-en="Will you attend?"
+          data-id="Apakah Anda akan hadir?"
+          data-ja="ご出席されますか？">
+          Will you attend?
+        </legend>
+
+        <label>
+          <input type="radio" name="attendance" value="Yes" required>
+          <span
+            data-en="Joyfully accepts"
+            data-id="Ya, saya akan hadir"
+            data-ja="出席します">
+            Joyfully accepts
+          </span>
+        </label>
+
+        <label>
+          <input type="radio" name="attendance" value="No">
+          <span
+            data-en="Regretfully declines"
+            data-id="Maaf, saya tidak dapat hadir"
+            data-ja="欠席します">
+            Regretfully declines
+          </span>
+        </label>
+      </fieldset>
+
+      <div id="rsvp-extra" hidden>
+        <label for="rsvp-guests"
+          data-en="Will you bring anyone with you?"
+          data-id="Apakah Anda akan membawa pendamping?"
+          data-ja="ご同伴者はいらっしゃいますか？">
+          Will you bring anyone with you?
+        </label>
+
+        <select id="rsvp-guests" name="guest_count">
+          <option value="0"
+            data-en="No, just me"
+            data-id="Tidak, hanya saya"
+            data-ja="いいえ、本人のみ">
+            No, just me
+          </option>
+          <option value="1"
+            data-en="Yes, 1 guest"
+            data-id="Ya, 1 orang"
+            data-ja="はい、1名">
+            Yes, 1 guest
+          </option>
+          <option value="2"
+            data-en="Yes, 2 guests"
+            data-id="Ya, 2 orang"
+            data-ja="はい、2名">
+            Yes, 2 guests
+          </option>
+          <option value="3"
+            data-en="Yes, 3 guests"
+            data-id="Ya, 3 orang"
+            data-ja="はい、3名">
+            Yes, 3 guests
+          </option>
+        </select>
+
+        <label for="rsvp-guest-names"
+          data-en="Names of your accompanying guests"
+          data-id="Nama pendamping"
+          data-ja="ご同伴者のお名前">
+          Names of your accompanying guests
+        </label>
+
+        <textarea id="rsvp-guest-names" name="guest_names"
+          rows="2"
+          placeholder="Please enter their names"></textarea>
+
+        <label for="rsvp-allergies"
+          data-en="Food allergies or dietary requirements"
+          data-id="Alergi makanan atau kebutuhan diet"
+          data-ja="食物アレルギー・食事制限">
+          Food allergies or dietary requirements
+        </label>
+
+        <textarea id="rsvp-allergies" name="allergies"
+          rows="3"
+          placeholder="Please let us know (optional)"></textarea>
+      </div>
+
+      <button type="submit"
+        data-en="Submit RSVP"
+        data-id="Kirim Konfirmasi"
+        data-ja="回答を送信">
+        Submit RSVP
+      </button>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -421,57 +545,6 @@
 </div>
 
 <script src="js/script.js"></script>
-
-<script>
-const openingScreen = document.getElementById("opening-screen");
-const openingButtons = document.querySelectorAll(".opening-language-button");
-const languageButtons = document.querySelectorAll(".language-button");
-const weddingMusic = document.getElementById("wedding-music");
-
-function setLanguage(language) {
-  document.querySelectorAll("[data-en][data-id][data-ja]").forEach(element => {
-    const text = element.dataset[language];
-
-    if (text !== undefined) {
-      element.innerHTML = text;
-    }
-  });
-
-  languageButtons.forEach(button => {
-    button.classList.toggle("active", button.dataset.lang === language);
-  });
-
-  document.documentElement.lang =
-    language === "id" ? "id" :
-    language === "ja" ? "ja" : "en";
-
-  localStorage.setItem("weddingLanguage", language);
-}
-
-openingButtons.forEach(button => {
-  button.addEventListener("click", async () => {
-    const language = button.dataset.openingLang;
-
-    setLanguage(language);
-    openingScreen.classList.add("hidden");
-
-    try {
-      await weddingMusic.play();
-    } catch (error) {
-      // Browser may block autoplay. The invitation still opens normally.
-    }
-  });
-});
-
-languageButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    setLanguage(button.dataset.lang);
-  });
-});
-
-// Start with English until the visitor selects a language.
-setLanguage("en");
-</script>
 
 </body>
 </html>
